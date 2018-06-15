@@ -1,0 +1,63 @@
+
+body {
+ background:#C6D1DD;
+}
+
+.login{
+	margin-top: 10%;
+}
+.register{
+	margin-top: 2%;
+}
+.logIn{
+	background: #C6D1DD;
+	border-radius: 2px;
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 1.2em;
+	border: none;
+	border-bottom: solid grey 1.5px;
+	color: grey;
+}
+.signUp {
+	background: #C6D1DD;
+	border-radius: 2px;
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 1.2em;
+	border: none;
+	border-bottom: solid grey 1.5px;
+	color: grey;
+}
+.btnLogin{
+	margin-top:2%;
+	margin-left: 25%;
+	border:0;
+  	background: #3C95BF;
+  	border:0;
+  	outline:none;
+  	border-radius:0;
+  	font-size:1.4rem;
+  	letter-spacing:.1em;
+  	color: white;
+  	-webkit-transition-duration: 0.4s;
+  	transition-duration: 0.4s;
+}
+.btnLogin:hover{
+	background-color: #64acce;
+}
+.btnSignup{
+	margin-top:2%;
+	margin-left: 25%;
+	border:0;
+  	background: #3C95BF;
+  	border:0;
+  	outline:none;
+  	border-radius:0;
+  	font-size:1.4rem;
+  	letter-spacing:.1em;
+  	color: white;
+  	-webkit-transition-duration: 0.4s;
+  	transition-duration: 0.4s;
+}
+.btnSignup:hover{
+	background-color: #64acce;
+}
