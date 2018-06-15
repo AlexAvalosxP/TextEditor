@@ -4,7 +4,7 @@ body {
 }
 
 .login{
-	margin-top: 10%;
+	margin-top: 5%;
 }
 .register{
 	margin-top: 2%;
@@ -40,6 +40,7 @@ body {
   	color: white;
   	-webkit-transition-duration: 0.4s;
   	transition-duration: 0.4s;
+	cursor: pointer;
 }
 .btnLogin:hover{
 	background-color: #64acce;
@@ -57,7 +58,17 @@ body {
   	color: white;
   	-webkit-transition-duration: 0.4s;
   	transition-duration: 0.4s;
+  	cursor: pointer;
 }
 .btnSignup:hover{
 	background-color: #64acce;
+}
+.logo{
+	width:300px; 
+	height:100px;
+	margin-left:40%;
+	position: static;
+	margin-top:2%;
+	
+
 }

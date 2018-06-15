@@ -87,6 +87,7 @@
 <head>
 	<link href="css/estiloLogin.css" rel="stylesheet" type="text/css">
 	<title>Login</title>
+	<img src="logo.png" class="logo">
 </head>
 <body>
 
