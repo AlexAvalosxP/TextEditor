@@ -85,12 +85,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="estiloIndex.css" rel="stylesheet" type="text/css">
+	<link href="css/estiloLogin.css" rel="stylesheet" type="text/css">
 	<title>Login</title>
+	<img src="logo.png" class="logo">
 </head>
 <body>
 
-<table align="center">
+<table align="center" class="login">
 	<form action="#" method="POST">
 		<tr>
 			<td><input type="text" name="userLogin" placeholder="Nombre de Usuario" class="logIn" style='width:441px; height:36px' required="required"></td>
@@ -99,16 +100,16 @@
 				<td><input type="password" name="passLogin" placeholder="Contraseña" class="logIn" style='width:441px; height:36px' required="required"></td>
 			</tr>
 			<tr>
-				<td><input type="submit" name="btnLogin" value="Iniciar Sesión" style='width:441px; height:49px' class="btnLogin"></td>
+				<td><input type="submit" name="btnLogin" value="Iniciar Sesión" style='width:200px; height:49px' class="btnLogin"></td>
 			</tr>
 	</form>
 </table>
 
 
-<table align="center">
+<table align="center" class="register">
 	<form action="#" method="POST">
 		<tr>
-			<td><input type="username" name="username" placeholder="Nombre de Usuario" class="signUp" style='width:441px; height:36px' required="required"></td>
+			<td><input type="username" name="username" placeholder="Nombre de Usuario" class="signUp" style='width:440px; height:36px' required="required"></td>
 		</tr>
 		<tr>
 			<td><input type="password" name="pass" placeholder="Contraseña" class="signUp" style='width:441px; height:36px' required="required"></td>
@@ -120,7 +121,7 @@
 			<td><input type="email" name="correo" placeholder="Correo Electrónico" class="signUp" style='width:441px; height:36px' required="required"></td>
 		</tr>
 		<tr>
-			<td><input type="submit" name="btnRegistrar" value="Regístrate"  style='width:441px; height:49px' class="btnSignup"></td></td>
+			<td><input type="submit" name="btnRegistrar" value="Regístrate"  style='width:200px; height:49px' class="btnSignup"></td></td>
 		</tr>
 	</form>
 </table>
