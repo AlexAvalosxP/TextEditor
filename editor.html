@@ -5,9 +5,10 @@
 	<script src="js/funciones.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<meta charset="utf-8">
 </head>
 <body onload="enableEdit()">
-	<div class="block"></div>
+	<div class="block"><input type="text" id="docName" placeholder="Nombre del Documento"></div>
 	<div class="tool">
 	<div class="barra">
 		<button onclick="changeStyle('undo')"><i class="fa fa-undo"></i></button>
@@ -69,7 +70,12 @@
 		<h1>Color de Relleno</h1><input type="color" onchange="changeStyle2('hiliteColor', this.value)">
 		<button class="sAll" onclick="changeStyle('selectAll')">Seleccionar Todo</button>
 	</div>
+	<div class="commando">
+		<button onclick="returnMenu()">Regresar</button>
+		<button onclick="saveDocument()">Guardar</button>
+	</div>
 	<iframe name="richTextField" class="sheet"></iframe>
 	</div>
+	<div hidden="true" id="idDoc"></div>
 </body>
 </html>

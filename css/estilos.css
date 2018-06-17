@@ -6,9 +6,9 @@
 
 .tool
 {
-	width: calc(100% - 50px);
-	margin-top: 25px;
-	margin-left: 25px;
+	width: calc(100%);
+	margin-top: 0px;
+	margin-left: 0px;
 	background: rgb(198,209,221);
 }
 
@@ -17,9 +17,30 @@
 	float: left;
 	position: fixed;
 	background: rgb(60,149,191);
-	width: calc(100% - 50px);
+	width: calc(100% - 100px);
+	margin-top: 50px;
 	height: 70px;
 	overflow-y: auto;
+}
+
+.commando
+{
+	float: left;
+	position: fixed;
+	margin-left: calc(100% - 100px);
+	background: rgb(60,149,191);
+	margin-top: 50px;
+	width: 100px;
+	height: 70px;
+}
+
+.commando > button
+{
+	float: left;
+	width: 100px;
+	height: 35px;
+	background: rgba(0,0,0,0.3);
+	color: white;
 }
 
 .barra>button, .barra>input, .barra>text
@@ -63,15 +84,53 @@
 	width: 700px;
 	margin-left: calc(50% - 350px);
 	background: white;
-	margin-top: 85px;
+	margin-top: 135px;
 }
 
 .block
 {
 	float: left;
-	height: 25px;
+	height: 50px;
 	width: calc(100%);
 	top: 0px;
-	background: white;
+	background: rgb(42,104,133);
 	position: fixed;
+}
+
+.block > input
+{
+	background: rgba(0,0,0,0.2);
+	height: 35px;
+	margin-top: 5px;
+	width: 700px;
+	margin-left: calc(50% - 350px);
+	text-align: center;
+	color: white;
+	font-size: 1.5em;
+	border-radius: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.top
+{
+	height: 100px;
+	width: 100%;
+	background: blue;
+	color: white;
+	text-align: center;
+	float: left;
+}
+
+.elem
+{
+	height: 60px;
+	width: calc(100% - 200px);
+	margin-left: 100px;
+	margin-top: 15px;
+	background: blue;
+	color: white;
+	text-align: center;
+	float: left;
+	border-radius: 20px;
 }
