@@ -42,7 +42,7 @@
 			$_SESSION['username'] = $res['username'];
 			
 
-			header('Location: index.html');
+			header('Location: main.html');
 
 			echo "ID>{$_SESSION['id']}<br>";
 			echo "Username>{$_SESSION['username']}<br>";
