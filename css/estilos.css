@@ -134,3 +134,15 @@
 	float: left;
 	border-radius: 20px;
 }
+
+.cerrarSesion
+{
+	position: fixed;
+	height: 50px;
+	width: 100px;
+	top: 0px;
+	left: calc(100% - 100px);
+	background: black;
+	color: white;
+	z-index: 10000;
+}

@@ -26,7 +26,7 @@
 		}
 		else
 		{
-			echo "<script>alert ('Puedes iniciar sesion');</script>";
+			//echo "<script>alert ('Puedes iniciar sesion');</script>";
 			$buscarUser = "SELECT idUsuario, username
 			FROM usuario
 			WHERE username = '{$username}' AND pass = md5('{$pass}');";
@@ -40,12 +40,15 @@
 			#Almacenamos el resultado en las correspondientes variables de sesión
 			$_SESSION['id'] = $res['idUsuario'];
 			$_SESSION['username'] = $res['username'];
+
 			
+			echo "<script> localStorage.setItem('user', '$username'); location.assign('main.html');</script>";
 
-			header('Location: main.html');
 
-			echo "ID>{$_SESSION['id']}<br>";
-			echo "Username>{$_SESSION['username']}<br>";
+			//header('Location: main.html');
+
+			//echo "ID>{$_SESSION['id']}<br>";
+			//echo "Username>{$_SESSION['username']}<br>";
 
 		}
 	}

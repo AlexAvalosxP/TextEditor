@@ -1,3 +1,5 @@
+user = localStorage.getItem('user');
+
 function enableEdit()
 {
 	richTextField.document.designMode = 'on';
@@ -29,12 +31,12 @@ function save(namex)
 
 function load(namey)
 {
-	if(namey == 'new')
-	{
-		createDocument();
-	}
-	else
-	{
+	//if(namey == 'new')
+	//{
+	//	createDocument();
+	//}
+	//else
+	//{
 		var chart = new XMLHttpRequest();
 		chart.open("POST", "php/loadHtml.php", true);
 		chart.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -61,7 +63,7 @@ function load(namey)
 				}
 	    	}
 	  	}
-  	}
+  	//}
 }
 
 function petition(method, id, body) {
@@ -79,13 +81,13 @@ function petition(method, id, body) {
 }
 
 function createDocument(){
-	var docName = document.getElementById('docName').value;
-	if(docName == "")
-	{
-		docName = "untitled";
-	}
+	//var docName = document.getElementById('docName').value;
+	//if(docName == "")
+	//{
+	//	docName = "untitled";
+	//}
 
-	var data = { "name":docName, "author":"Anon"};
+	var data = { "name":'untitled', "author": user};
 	var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "http://localhost:3000/documents/", true);
     xhttp.setRequestHeader("Content-type", "application/json");
@@ -94,8 +96,17 @@ function createDocument(){
     	if (this.readyState == 4 && this.status == 201) {
     		var response = JSON.parse(xhttp.responseText);
     		idX = String(response._id)
-    		document.getElementById('idDoc').value = idX;
-    		save(idX);
+    		//document.getElementById('idDoc').value = idX;
+    		//save(idX);
+    		var chart = new XMLHttpRequest();
+			chart.open("POST", "php/saveHtml.php", true);
+			chart.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+			var htmltxtEsc = "%3Cbr%3E%0A";
+			//htmltxtEsc = escape(htmltxt);
+
+			chart.send('i=' + htmltxtEsc + '&n=' + idX);
+    		location.assign('editor.html?id=' + idX);
     	}
 	}
 }
@@ -122,8 +133,15 @@ function saveDocument()
 
 function openDocument(nameh)
 {
-	location.assign('editor.html?id=' + nameh);
-	//console.log(nameh)
+	if (nameh == "new")
+	{
+		createDocument();
+	}
+	else
+	{
+		location.assign('editor.html?id=' + nameh);
+		//console.log(nameh)
+	}
 }
 
 function returnMenu()
@@ -133,8 +151,10 @@ function returnMenu()
 
 function cargarDocumentos()
 {
+	document.getElementById('user').innerHTML = user;
+
 	var xhttp = new XMLHttpRequest();
-    xhttp.open('GET', "http://localhost:3000/documents");
+    xhttp.open('GET', "http://localhost:3000/documents/author/" + user);
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.send();
     xhttp.onreadystatechange = function() {
@@ -158,4 +178,10 @@ function getParameterByName(name) {
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
     results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function cerrarSes()
+{
+	localStorage.clear();
+	location.assign('index.php');
 }
