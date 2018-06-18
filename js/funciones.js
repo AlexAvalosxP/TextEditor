@@ -171,6 +171,29 @@ function openDocument(nameh)
 	}
 }
 
+function deleteDocument(namew)
+{
+	document.getElementById('comprb').innerHTML = "<div class='comprb'><h3>¿Eliminar este documento?</h3><button id='" + namew + "' onclick='realDelete(this.id)'>Si</button><button onclick='closeComprb()'>No</button></div>";
+}
+
+function realDelete(namev)
+{
+	var xhttp = new XMLHttpRequest();
+    xhttp.open("DELETE", "http://localhost:3000/documents/" + namev, true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send();
+    xhttp.onreadystatechange = function() {
+    	if (this.readyState == 4 && this.status == 200) {
+    		location.assign('main.html');	
+    	}
+	}
+}
+
+function closeComprb()
+{
+	document.getElementById('comprb').innerHTML = "";
+}
+
 function returnMenu()
 {
 	location.assign('main.html');	
@@ -193,7 +216,7 @@ function cargarDocumentos()
     		
     		var listDocs = document.getElementById('documentsList');
     		for (var i = 0; i < Object.keys(response).length; i++) {
-    			listDocs.innerHTML += "<div class='elem' id='" + response[i]._id + "' onclick='openDocument(this.id)'><h1>" + response[i].name + "</h1><h2>" + response[i].author + "</h2></div>";	
+    			listDocs.innerHTML += "<div class='elem' id='" + response[i]._id + "' onclick='openDocument(this.id)'><h1>" + response[i].name + "</h1><h2>" + response[i].author + "</h2></div><div class='btnElim' id='" + response[i]._id + "' onclick='deleteDocument(this.id)'><i class='fa fa-trash'></i></div>";	
     		}
     		
     	}

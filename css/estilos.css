@@ -125,6 +125,19 @@
 .elem
 {
 	height: 60px;
+	width: calc(100% - 270px);
+	margin-left: 100px;
+	margin-top: 15px;
+	background: blue;
+	color: white;
+	text-align: center;
+	float: left;
+	border-radius: 20px 0px 0px 20px;
+}
+
+.elemN
+{
+	height: 60px;
 	width: calc(100% - 200px);
 	margin-left: 100px;
 	margin-top: 15px;
@@ -132,7 +145,7 @@
 	color: white;
 	text-align: center;
 	float: left;
-	border-radius: 20px;
+	border-radius: 20px 20px 20px 20px;
 }
 
 .cerrarSesion
@@ -145,4 +158,50 @@
 	background: black;
 	color: white;
 	z-index: 10000;
+}
+
+.btnElim
+{
+	height: 49px;
+	width: 69px;
+	float: left;
+	text-align: center;
+	color: white;
+	margin-top: 15px;
+	margin-left: 1px;
+	background: blue;
+	border-radius: 0px 20px 20px 0px;
+	font-size: 1.8em;
+	align-items: center;
+	padding-top: 11px;
+}
+
+.comprb
+{
+	position: absolute;	
+	height: 200px;
+	width: calc(100% - 300px);
+	left: 150px;
+	top: calc(50% - 100px);
+	background: rgba(15,27,32,0.6);
+	align-items: center;
+	position: fixed;	
+}
+
+.comprb > h3
+{
+	text-align: center;
+	font-size: 2em;
+	color: red;
+	margin-top: 10px;
+}
+
+.comprb > button
+{
+	height: 100px;
+	width: 100px;
+	margin-top: 20px;
+	margin-left: calc(100% / 3 - 50px);
+	color: white;
+	background: black;
 }
