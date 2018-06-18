@@ -1,5 +1,32 @@
 user = localStorage.getItem('user');
 
+function checkCredentials()
+{
+	if(user == null)
+	{
+		location.assign('index.php');
+	}
+	else
+	{
+		return true;
+	}
+}
+
+function checkMain()
+{
+	if(checkCredentials()){
+		cargarDocumentos();
+	}
+}
+
+function checkEditor()
+{
+	if(checkCredentials())
+	{
+		enableEdit();
+	}
+}
+
 function enableEdit()
 {
 	richTextField.document.designMode = 'on';
