@@ -8,7 +8,7 @@
 	<meta charset="utf-8">
 </head>
 <body onload="checkEditor()">
-	<button class="cerrarSesion" onclick="cerrarSes()">Cerrar Sesión</button>
+	<button class="cerrarSesion2" onclick="cerrarSes()">Cerrar Sesión</button>
 	<div class="block"><input type="text" id="docName" placeholder="Nombre del Documento"></div>
 	<div class="tool">
 	<div class="barra">
@@ -68,13 +68,11 @@
 			<option value="16">16</option>
 		</select>
 		<h1>Color de Fuente</h1><input type="color" onchange="changeStyle2('foreColor', this.value)">
-		<h1>Color de Relleno</h1><input type="color" onchange="changeStyle2('hiliteColor', this.value)">
-		<button class="sAll" onclick="changeStyle('selectAll')">Seleccionar Todo</button>
+
 	</div>
-	<div class="commando">
-		<button onclick="returnMenu()">Regresar</button>
-		<button onclick="saveDocument()">Guardar</button>
-	</div>
+		<button onclick="returnMenu()" class="return">Regresar</button>
+		<button onclick="saveDocument()" class="save">Guardar</button>
+
 	<iframe name="richTextField" class="sheet"></iframe>
 	</div>
 	<div hidden="true" id="idDoc"></div>
