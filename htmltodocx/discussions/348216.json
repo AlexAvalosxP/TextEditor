@@ -1,0 +1,114 @@
+[
+  {
+    "Id": "808944",
+    "ThreadId": "348216",
+    "Html": "<p>Hello! great class! but it doesn't work with utf-8(cyrillic symbols) iconv also doesn't help... so if anyone could help me? for example i try to export &lt;h1&gt; привет &lt;/h1&gt; :(</p>\n<p>p.s. section.php file i commented in PHPWord. but nothing happens(</p>",
+    "PostedDate": "2012-03-12T00:21:21.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "809434",
+    "ThreadId": "348216",
+    "Html": "<p>finally, i've solved the problem - now it speaks Russian, except 1 symbol((( capital Р</p>",
+    "PostedDate": "2012-03-12T23:25:32.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "811105",
+    "ThreadId": "348216",
+    "Html": "<p>Brilliant. What was the solution?</p>",
+    "PostedDate": "2012-03-15T14:24:09.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "811598",
+    "ThreadId": "348216",
+    "Html": "<p>As you've probably found, this appears to be a problem with PHPWord (not this converter which uses PHPWord). I guess you have tried what other people have suggested and removed the use of utf8_encode() from the PHPWord code. I've just tried that myself - and then tried putting Russian through it - and also as you have found, it works for all Russian characters except capital P (Р) - but if you use this character then there is an error with the creation of the Word document and it won't open.&nbsp;</p>",
+    "PostedDate": "2012-03-16T11:53:11.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "812069",
+    "ThreadId": "348216",
+    "Html": "<p>yes, you are right...&nbsp;</p>\r\n<p>I put $text=utf8_decode($text) in Text.php in PHPword...</p>\r\n<p>and it shows Russian except capital Р and some more symbols (it's blank character) <span>(&nbsp;) - it's here:)))</span></p>\r\n<p><span>p.s. i tried iconv function maybe everywhere, but it shows nothing if to use it.... so i don't know what to do.. i made my work but using just headers ... everythong works, but it's sort of xml doc, or web doc... but i reached almost final result... but i want to implement you solution - so if i have time i will continue to try it...&nbsp;</span></p>",
+    "PostedDate": "2012-03-18T00:31:20.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "812072",
+    "ThreadId": "348216",
+    "Html": "<p>i tried your last version....</p>\r\n<p>if to try&nbsp;&lt;h1&gt;Russian&lt;/h1&gt;&lt;h1&gt;Hello&lt;/h1&gt;&lt;h1&gt;Родина&lt;/h1&gt; (capital russian Р) in utf8-test.html&nbsp;</p>\r\n<p>so i get (can't open file example due to mistakes bad xml sign .... document (row 33 column 35) )......</p>",
+    "PostedDate": "2012-03-18T00:43:15.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "812079",
+    "ThreadId": "348216",
+    "Html": "<p>hmmm... i tried blank PHPword &nbsp;(just made&nbsp;$givenText = $text; in Section.php file)</p>\n<p>$PHPWord = new PHPWord();<br /> // New portrait section</p>\n<p>$section = $PHPWord-&gt;createSection();<br /> // Add text elements</p>\n<p>$section-&gt;addText('Родина World!');$section-&gt;addTextBreak(2); // Родина with capital russian Р</p>\n<p>$section-&gt;addText('I am inline styled.', array('name'=&gt;'Verdana', 'color'=&gt;'006699'));$section-&gt;addTextBreak(2);</p>\n<p>$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');$objWriter-&gt;save('Text.docx');</p>\n<p>everything's fine....</p>\n<p>i see the problem maybe as P (russian) like &lt;P&gt; tag?</p>",
+    "PostedDate": "2012-03-18T01:16:19.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "812233",
+    "ThreadId": "348216",
+    "Html": "<p>Found the problem! Line 103 in h2d_htmlconverter.php in function h2d_clean_text(), changed:</p>\n<div style=\"color: black; background-color: white;\">\n<pre>$text = preg_replace(<span style=\"color: #a31515;\">'/\\s+/'</span>, <span style=\"color: #a31515;\">' '</span>, $text);</pre>\n</div>\n<p>to:</p>\n<div style=\"color: black; background-color: white;\">\n<pre>$text = preg_replace(<span style=\"color: #a31515;\">'/\\s+/u'</span>, <span style=\"color: #a31515;\">' '</span>, $text);</pre>\n</div>\n<p>This wasn't dealing with utf-8 strings correctly.</p>\n<p>This is in the latest change set, and I can create a new release shortly.</p>\n<p>It's still necessary to do something about the use of utf8_encode() functions in PHPWord in order to display utf-8 characters.</p>",
+    "PostedDate": "2012-03-18T13:20:39.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "812398",
+    "ThreadId": "348216",
+    "Html": "<p>great - i'll try tonight ...</p>\r\n<p>did u try - to set $text=utf8_decode($text)? in Text.php? or that doesn't solve?</p>",
+    "PostedDate": "2012-03-19T03:30:36.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "812428",
+    "ThreadId": "348216",
+    "Html": "<p>so what can i say? THANKS a lot... just a u sign(((( but now everything works - as i use utf-8 almost everywhere... so i comment everywhere utf8_encode in Section.php and paste $text=utf8_decode($text) in Text.php file in PHPWord... so my task is coming to be solved completely - i have to \"link\" css styles to my text..., to make TOC (table of content), and page numbers. Yeah = just forgotten... i couldn't make table border=1... in you examples it's also without borders as i see...</p>\r\n<p>so thanks a lot again!&nbsp;</p>",
+    "PostedDate": "2012-03-19T04:37:40.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "812432",
+    "ThreadId": "348216",
+    "Html": "<p>just short advice and i go further myself... how to implement my css file?</p>\n<p>if to implement it to example.html as &lt;style type=\"text/css\"&gt; ..... &lt;/style&gt; so i get just a text...</p>\n<p>am i right - i have to make an array in styles.inc file?</p>\n<p>f.e. i have&nbsp;</p>\n<p>.f4 {</p>\n<p>text-align:justify;</p>\n<p>text-indent:35px;</p>\n<p>line-height:120%;</p>\n<p>margin: 0px 10px 2 px 20 px</p>\n<p>}</p>\n<p>it'll be as</p>\n<p>$styles ['f4']=array</p>\n<p>(</p>\n<p>)... ??? seems to be rather tough)))</p>",
+    "PostedDate": "2012-03-19T04:45:03.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "812450",
+    "ThreadId": "348216",
+    "Html": "<p>Yes that's right - this array is a set of style definitions as recognised by PHPWord - and this is well documented here: http://phpword.codeplex.com/releases/view/49543#DownloadId=138036 (available from this page:&nbsp;<a href=\"http://phpword.codeplex.com/releases/view/49543\">http://phpword.codeplex.com/releases/view/49543</a>).</p>\r\n<p>Writing something to interpret a standard CSS file would be a very big job to do - and I don't think a standard CSS file would be appropriate for styling what will come out in the Word document - I think designers should consciously think about how they want their content to appear in a Word document by creating specific styles within what is possible with PHPWord.</p>\r\n<p>I do plan to improve how inline styles work, particularly where you have numerical values (e.g. font size) - however I'm afraid I don't have time to do this at the moment.</p>",
+    "PostedDate": "2012-03-19T05:26:01.273-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "812492",
+    "ThreadId": "348216",
+    "Html": "<p>ok, thanx. I'll nave some free time in 1-2 weeks to think about it...</p>\n<p>the problem is that i get from mysql bd somthing like</p>\n<p>&lt;table class=\"f4\"&gt; ... &lt;p class=\"f4_text\"&gt; and so on... probably i can clean it using preg_replace or something like that... and then use styles... so i will try both ways.</p>\n<p>p.s.As i said i realized the part of my project (export to word/excel) as web doc, using xml and something else - using headers... so i'll try to find maybe easier way))) so thanks again.</p>\n<p>p.p.s. what about table border (=1)?)</p>",
+    "PostedDate": "2012-03-19T06:43:15.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "812690",
+    "ThreadId": "348216",
+    "Html": "<p>Yep, I noticed I hadn't added in the code for styling tables or table cells. I've added this in - it's in the latest commit - see http://htmltodocx.codeplex.com/SourceControl/list/changesets (change set 9791). Note, I haven't fully tested this (but it looks alright from what I have tried so far). Also, table styling in PHPWord appears to apply to all cells within the table (e.g. setting the border applies to all the cells not just the border of the table) - I haven't had a chance to verify that with a clean version of PHPWord though.</p>",
+    "PostedDate": "2012-03-19T13:25:41.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

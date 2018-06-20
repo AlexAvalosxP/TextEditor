@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": null,
+    "Description": "Current version of  __h2d_htmlconverter.php__ prepends external images from a __https__-Location with the Doc-Root which leads to an Exception as the image cannot be found.\r\nTo solve this change line __#650__ in __h2d_htmlconverter.php__ from\r\n```\r\nif (strpos($element_src, 'http://') === 0) {\r\n```\r\nto\r\n```\r\nif (strpos($element_src, 'http://') === 0 || strpos($element_src, 'https://') === 0) {\r\n```",
+    "LastUpdatedDate": "2015-01-07T05:34:20.093-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmltodocx",
+    "ReportedDate": "2015-01-05T08:55:17.81-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Allow external images from https-Locations",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 488
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Thank you for spotting that.\n\nI've updated the [source code](https://htmltodocx.codeplex.com/SourceControl/latest) with the change you suggested. I've done this on line 461 for a elements and line 650 for img elements. I haven't tested it though - could you let me know if the updated version of the converter works for you - I can then update the download files.",
+      "PostedDate": "2015-01-07T04:04:15.413-08:00",
+      "Id": 169616
+    },
+    {
+      "Message": "Thank you for your response!\n\nI integrated the change in line 461 in my code too and could not see any problems so far. Looking at the code I think there is not much that could go wrong with it.\nAnyway I will report any problems that may occur.\n\nThough my code is a little bit different than yours as I also have the changes from [#486](https://htmltodocx.codeplex.com/workitem/486)\nFurthermore - as my Code is still under development I currently have also other issues with the docx-Generation in general, which may interfere anyway.",
+      "PostedDate": "2015-01-07T05:34:20.093-08:00",
+      "Id": 169618
+    }
+  ]
+}

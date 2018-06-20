@@ -1,0 +1,98 @@
+<div class="wikidoc">
+<p><strong>Requirements</strong></p>
+<p>PHPWord and SimpleHTMLDom are included in the download from here - although you may want to get the latest versions of these. Please also see the
+<a href="http://phpword.codeplex.com/documentation">requirements for PHPWord</a>.</p>
+<p><strong>Setting up</strong></p>
+<p>Extract the zip archive;</p>
+<p>Put the files onto your web server;</p>
+<p>See also <a href="http://phpword.codeplex.com/documentation">PHPWord installation and configuration</a>.</p>
+<p>More detailed setup details: <a href="https://htmltodocx.codeplex.com/wikipage?title=HTML%20to%20docx%20Converter%20Set%20Up%20Details&version=1">
+https://htmltodocx.codeplex.com/wikipage?title=HTML%20to%20docx%20Converter%20Set%20Up%20Details&amp;version=1</a></p>
+<p><strong>Overview</strong></p>
+<p>To get an idea of how this works, look at the file &quot;example.php&quot;. Browsing to this page will cause a Word document to be downloaded - this document is the result of converting the file example_html.html file (in the example_files directory). For more detailed
+ information, browse to&nbsp;documentation/index.php.</p>
+<p>The converter supports most of the typical HTML elements - see function&nbsp;h2d_html_allowed_children() in h2d_htmlconverter.php for the full list. A &quot;style sheet&quot; can be created - and some initial styles can also be set - see function&nbsp;h2d_styles()
+ in styles.inc. Note you can define some default styles (initially set - and applying to all elements initially), you can define further styles according to tags, classes, and inline styles. The attribute-value pairs associated with each of these are the attribute-value
+ pairs used by PHPWord for any of its styles (e.g. text styles, paragraph styles).</p>
+<p><strong>Example</strong></p>
+<p>&nbsp;</p>
+<div style="color:black; background-color:white">
+<pre>&lt;?php
+<span style="color:green">/**
+*  Example of use of HTML to docx converter
+*/</span>
+
+<span style="color:green">// Load the files we need:</span>
+<span style="color:blue">require_once</span> <span style="color:#a31515">'phpword/PHPWord.php'</span>;
+<span style="color:blue">require_once</span> <span style="color:#a31515">'simplehtmldom/simple_html_dom.php'</span>;
+<span style="color:blue">require_once</span> <span style="color:#a31515">'htmltodocx_converter/h2d_htmlconverter.php'</span>;
+<span style="color:blue">require_once</span> <span style="color:#a31515">'example_files/styles.inc'</span>;
+
+<span style="color:green">// HTML fragment we want to parse:</span>
+$html = file_get_contents(<span style="color:#a31515">'example_files/example_html.html'</span>);
+ 
+<span style="color:green">// New Word Document:</span>
+$phpword_object = <span style="color:blue">new</span> PHPWord();
+$section = $phpword_object-&gt;createSection();
+
+<span style="color:green">// HTML Dom object:</span>
+$html_dom = <span style="color:blue">new</span> simple_html_dom();
+$html_dom-&gt;load(<span style="color:#a31515">'&lt;html&gt;&lt;body&gt;'</span> . $html . <span style="color:#a31515">'&lt;/body&gt;&lt;/html&gt;'</span>);
+<span style="color:green">// Note, we needed to nest the html in a couple of dummy elements.</span>
+
+<span style="color:green">// Create the dom array of elements which we are going to work on:</span>
+$html_dom_array = $html_dom-&gt;find(<span style="color:#a31515">'html'</span>,0)-&gt;children();
+
+<span style="color:green">// Provide some initial settings:</span>
+$initial_state = <span style="color:blue">array</span>(
+  <span style="color:green">// Required parameters:</span>
+  <span style="color:#a31515">'phpword_object'</span> =&gt; &amp;$phpword_object, <span style="color:green">// Must be passed by reference.</span>
+  <span style="color:#a31515">'base_root'</span> =&gt; <span style="color:#a31515">'http://test.local'</span>, <span style="color:green">// Required for link elements - change it to your domain.</span>
+  <span style="color:#a31515">'base_path'</span> =&gt; <span style="color:#a31515">'/htmltodocx/'</span>, <span style="color:green">// Path from base_root to whatever url your links are relative to.</span>
+  
+  <span style="color:green">// Optional parameters - showing the defaults if you don't set anything:</span>
+  <span style="color:#a31515">'current_style'</span> =&gt; <span style="color:blue">array</span>(<span style="color:#a31515">'size'</span> =&gt; <span style="color:#a31515">'11'</span>), <span style="color:green">// The PHPWord style on the top element - may be inherited by descendent elements.</span>
+  <span style="color:#a31515">'parents'</span> =&gt; <span style="color:blue">array</span>(0 =&gt; <span style="color:#a31515">'body'</span>), <span style="color:green">// Our parent is body.</span>
+  <span style="color:#a31515">'list_depth'</span> =&gt; 0, <span style="color:green">// This is the current depth of any current list.</span>
+  <span style="color:#a31515">'context'</span> =&gt; <span style="color:#a31515">'section'</span>, <span style="color:green">// Possible values - section, footer or header.</span>
+  <span style="color:#a31515">'pseudo_list'</span> =&gt; TRUE, <span style="color:green">// NOTE: Word lists not yet supported (TRUE is the only option at present).</span>
+  <span style="color:#a31515">'pseudo_list_indicator_font_name'</span> =&gt; <span style="color:#a31515">'Wingdings'</span>, <span style="color:green">// Bullet indicator font.</span>
+  <span style="color:#a31515">'pseudo_list_indicator_font_size'</span> =&gt; <span style="color:#a31515">'7'</span>, <span style="color:green">// Bullet indicator size.</span>
+  <span style="color:#a31515">'pseudo_list_indicator_character'</span> =&gt; <span style="color:#a31515">'l '</span>, <span style="color:green">// Gives a circle bullet point with wingdings.</span>
+  <span style="color:#a31515">'table_allowed'</span> =&gt; TRUE, <span style="color:green">// Note, if you are adding this html into a PHPWord table you should set this to FALSE: tables cannot be nested in PHPWord.</span>
+  <span style="color:#a31515">'treat_div_as_paragraph'</span> =&gt; TRUE, <span style="color:green">// If set to TRUE, each new div will trigger a new line in the Word document.</span>
+      
+  <span style="color:green">// Optional - no default:    </span>
+  <span style="color:#a31515">'style_sheet'</span> =&gt; htmltodocx_styles_example(), <span style="color:green">// This is an array (the &quot;style sheet&quot;) - returned by htmltodocx_styles_example() here (in styles.inc) - see this function for an example of how to construct this array.</span>
+  );    
+
+<span style="color:green">// Convert the HTML and put it into the PHPWord object</span>
+htmltodocx_insert_html($section, $html_dom_array[0]-&gt;nodes, $initial_state);
+
+<span style="color:green">// Clear the HTML dom object:</span>
+$html_dom-&gt;clear(); 
+<span style="color:blue">unset</span>($html_dom);
+
+<span style="color:green">// Save File</span>
+$h2d_file_uri = tempnam(<span style="color:#a31515">''</span>, <span style="color:#a31515">'htd'</span>);
+$objWriter = PHPWord_IOFactory::createWriter($phpword_object, <span style="color:#a31515">'Word2007'</span>);
+$objWriter-&gt;save($h2d_file_uri);
+
+<span style="color:green">// Download the file:</span>
+header(<span style="color:#a31515">'Content-Description: File Transfer'</span>);
+header(<span style="color:#a31515">'Content-Type: application/octet-stream'</span>);
+header(<span style="color:#a31515">'Content-Disposition: attachment; filename=example.docx'</span>);
+header(<span style="color:#a31515">'Content-Transfer-Encoding: binary'</span>);
+header(<span style="color:#a31515">'Expires: 0'</span>);
+header(<span style="color:#a31515">'Cache-Control: must-revalidate, post-check=0, pre-check=0'</span>);
+header(<span style="color:#a31515">'Pragma: public'</span>);
+header(<span style="color:#a31515">'Content-Length: '</span> . filesize($h2d_file_uri));
+ob_clean();
+flush();
+$status = readfile($h2d_file_uri);
+unlink($h2d_file_uri);
+<span style="color:blue">exit</span>;
+</pre>
+</div>
+<p>&nbsp;</p>
+</div><div class="ClearBoth"></div>

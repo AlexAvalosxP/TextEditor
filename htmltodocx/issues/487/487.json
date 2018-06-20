@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\r\n\r\nI had to use this converter, but it was not possible to add base64 images. \r\n\r\nUnfortunately I did not have time to understand all the code. So I made a small adjustment as shown in the attached image.\r\n\r\nCongratulations for the project!",
+    "LastUpdatedDate": "2014-08-30T12:55:45.793-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmltodocx",
+    "ReportedDate": "2014-08-30T12:55:45.467-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Base64 Images",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 487
+  },
+  "FileAttachments": [
+    {
+      "FileId": 902569,
+      "FileName": "Captura de Tela 2014-08-30 às 16.51.47.png",
+      "DownloadUrl": ".\\902569"
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "This problem does not appear to be in the current release.",
+    "ClosedDate": "2012-07-06T07:49:07.457-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "input:\n<div><h2><strong>abc</strong></h2></div>\n\nExpect output:\nabc \n\nactual output:\n<strong>abc</strong>\n\nfix:\nadd h1,h2,h3,h4,h5 in $allowed_children @function h2d_html_allowed_children($tag = NULL) in h2d_htmlconverter.php",
+    "LastUpdatedDate": "2012-07-06T07:49:07.457-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmltodocx",
+    "ReportedDate": "2012-06-01T02:09:26.64-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "nest html tag output error",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 480
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This seems to work for me, and h1-h6 elements are set as allowed children of a div element - are you using the htmltodocx_0.5.2_alpha release (released on the 9th May)?",
+      "PostedDate": "2012-06-07T11:33:16.063-07:00",
+      "Id": 73518
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1395549",
+    "ThreadId": "613398",
+    "Html": "Maybe there are still people who read this forum, so I decided to give it a shot :)\r<br />\n<br />\nIs there a way to set the font color according to the font color of the html in the styles.inc?\r<br />\nSo if you had<br />\n<pre><code>...\n&lt;font color=&quot;0xff0000&quot;&gt;Text&lt;/font&gt;\n...</code></pre>\n\nand in styles.inc something like<br />\n<pre><code>...\n'font color=&quot;xxxxxx&quot;' =&gt; array (\n        'color' =&gt; 'xxxxxx',\n...</code></pre>\n\nWould that be in some way possible?\r<br />\n<br />\nBest Regards<br />\n",
+    "PostedDate": "2015-03-25T05:55:39.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1435433",
+    "ThreadId": "613398",
+    "Html": "Yes you can do that . Following things you need to change in your code\r<br />\n<br />\nChange this<br />\n<pre><code>...\n&lt;font color=&quot;0xff0000&quot;&gt;Text&lt;/font&gt;\n...\n</code></pre>\n\nto <br />\n<pre><code>...\n&lt;font style=&quot;color: FF0000&quot;&gt;Text&lt;/font&gt;\n...\n</code></pre>\n\nAnd in  styles.inc  instead of<br />\n<pre><code>...\n'font color=&quot;xxxxxx&quot;' =&gt; array (\n        'color' =&gt; 'xxxxxx',\n...</code></pre>\n\nwrite this<br />\n<pre><code> 'color: FF0000' =&gt; array (\n        'color' =&gt; 'FF0000',\n   )</code></pre>\n\nunder <br />\n<pre><code>$styles['inline']</code></pre>\n\n",
+    "PostedDate": "2015-07-21T22:22:26.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1435651",
+    "ThreadId": "613398",
+    "Html": "Thank you very much for your reply.\r<br />\n<br />\nBut this way would still require to enter the colours statically, I was looking for a more general solution to 'forward' the color.\r<br />\n<br />\nBest regards<br />\n",
+    "PostedDate": "2015-07-23T02:20:19.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

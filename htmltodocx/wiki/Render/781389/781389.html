@@ -1,0 +1,27 @@
+<div class="wikidoc"><h2>HTML to docx Converter set up details</h2>
+<h3>Requirements - server</h3>
+<ul><li>PHP 5.2.x or later;</li>
+<li>PHP Extension ZipArchive;</li>
+<li>PHP Extension libxml;</li></ul>
+<br />Check output of phpinfo() to see if your installation meets these requirements.<br />
+<h3>Requirements - client</h3>
+This converter produces Word documents in the docx (Office Open XML) file format. The client will need a programme that can open these, for example Microsoft Word 2007 or later or an earlier version of Word with the Micorsoft Office Compatibility Pack or Libre Office or Open Office.<br />
+<h3>Installation</h3>
+Place the files on your web server somewhere where it serves files from - for example in a httpdocs directory.<br />
+<h3>Documentation and checking if it works</h3>
+Browse to htmltodocx/documentation/index.php, for example go to http://mysite.local/htmltodocx/documentation/index.php in your web server if that is where you have placed your files.<br /><br />You should be seeing a page of documentation, if not, then PHP is probably not set up properly on the server.<br /><br />Click on the link at the top of the page &quot;Download this page as a Word document&quot;. Open the downloaded Word document - it should look similar to the documentation web page. If you encounter a problem here, check the server requirements above.<br />
+<h3>Understanding how it works</h3>
+To get the best out of this software, you should read this documentation page in conjunction with the PHPWord documentation - PHPWord_Docs_0.6.2.docx - which you can find in the phpword directory. Understanding both of these will enable you to style the resulting docx documents in a way most appropriate for you.<br />
+<h3>Production sites</h3>
+You don&#39;t need to - and it is probably not desirable to - include all the documentation on a production site. You will just need to keep the following directories and their contents:
+<ul><li>htmltodocx_converter</li>
+<li>phpword</li>
+<li>simplehtmldom</li></ul>
+<br />In addition, you could remove the &quot;Example&quot; directory from the phpword directory.<br />
+<h3>Project information</h3>
+<h4>htmltodocx</h4>
+Project home page:<br /><a href="http://htmltodocx.codeplex.com">htmltodocx.codeplex.com</a><br />
+<h4>PHPword</h4>
+Project home page:<br /><a href="http://phpword.codeplex.com">phpword.codeplex.com</a><br /><br />NOTE: the version of PHPword included here has been modified so that it can work with international character sets and to address a problem with table sizing when using LibreOffice.<br />
+<h4>Simple HTML dom</h4>
+Project home page:<br /><a href="http://simplehtmldom.sourceforge.net/">simplehtmldom.sourceforge.net/</a></div><div class="ClearBoth"></div>

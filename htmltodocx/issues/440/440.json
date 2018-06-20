@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "PHP 'Undefined index' is raised due to wrong check at line 134 of file h2d_htmlconverter.php.\n$tag_style = $style_sheet['element'][$element->tag] ? ...\nshould be\n$tag_style = isset($style_sheet['element'][$element->tag]) ? ...",
+    "LastUpdatedDate": "2012-05-08T11:11:50.39-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmltodocx",
+    "ReportedDate": "2012-03-27T07:36:00.56-07:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "'Undefined index' error",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 440
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

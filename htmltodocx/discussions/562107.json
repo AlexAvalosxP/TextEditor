@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1293381",
+    "ThreadId": "562107",
+    "Html": "Hi There,\r<br />\n<br />\nThanks for sharing this good component. I have checked and installed component in my web browser and working fine. But reference to my project requirement, I having html page which is type of report page which consists html5 elements &quot;svg&quot;.\r<br />\n<br />\nWhen I tried to export those elements in docx, it cant export it and printing &quot;svg&quot; html code in text format not in terms of graph representation in docx.\r<br />\n<br />\nCan you please guide me further.\r<br />\n<br />\nIf required, share your email id so that will email to you reference html file to export\r<br />\n<br />\n<br />\nThanks in advanced,\r<br />\nAnkit.<br />\n",
+    "PostedDate": "2014-08-25T23:04:52.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1297863",
+    "ThreadId": "562107",
+    "Html": "I'm afraid it won't convert svg elements in its current form. See <a href=\"http://htmltodocx.codeplex.com/SourceControl/latest#htmltodocx_converter/h2d_htmlconverter.php\" rel=\"nofollow\">http://htmltodocx.codeplex.com/SourceControl/latest#htmltodocx_converter/h2d_htmlconverter.php</a> and function htmltodocx_insert_html_recursive(). It will convert all the elements specified in the switch statement - eg. p, div, h1, h2, etc. Anything else and the contents of the element will be treated as text. <br />\n",
+    "PostedDate": "2014-09-01T11:40:14.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

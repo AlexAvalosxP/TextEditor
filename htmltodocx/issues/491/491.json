@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm using a slightly modified version of the example.php code (change the input file to come from a command line) and everything works great, except text color.  If the input is colored text, that color is not picked up on the docx output.  I'm sure that I'm just missing something, but not being a php coder makes it much more difficult to find where I'm going astray.  Any help would be sincerely appreciated.  \r\n\r\nHere is a sample html that is failing to carry text color through to the docx file\r\n<h2>Mice are terrible</h2>\r\n\r\n<p>Mice are flea ridden, horrible rodents. &nbsp;I have no idea how something<span style=\"color:#FF0000\"><strong> so replusive</strong></span> gained the popularity of Mickey Mouse.</p>\r\n\r\n\r\nLewis",
+    "LastUpdatedDate": "2016-05-05T09:05:02.9-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmltodocx",
+    "ReportedDate": "2016-05-05T09:05:02.9-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "text color",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 491
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

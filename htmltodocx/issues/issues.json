@@ -1,0 +1,70 @@
+[
+  {
+    "Id": 311,
+    "Title": "Improve handling of inline styles"
+  },
+  {
+    "Id": 440,
+    "Title": "'Undefined index' error"
+  },
+  {
+    "Id": 441,
+    "Title": "Undefined index: textrun"
+  },
+  {
+    "Id": 442,
+    "Title": "<img> tag not correctly handled"
+  },
+  {
+    "Id": 455,
+    "Title": "Support for HTML entities"
+  },
+  {
+    "Id": 480,
+    "Title": "nest html tag output error"
+  },
+  {
+    "Id": 481,
+    "Title": "Line spacing in Word 2010"
+  },
+  {
+    "Id": 482,
+    "Title": "Document header and footer from html"
+  },
+  {
+    "Id": 483,
+    "Title": "Table of contents is not working in Libreoffice 4"
+  },
+  {
+    "Id": 484,
+    "Title": "No Paragraph-Styles added"
+  },
+  {
+    "Id": 485,
+    "Title": "colspan not merging columns in MS Word "
+  },
+  {
+    "Id": 486,
+    "Title": "Real Lists with phpword >= 0.11.0"
+  },
+  {
+    "Id": 487,
+    "Title": "Base64 Images"
+  },
+  {
+    "Id": 488,
+    "Title": "Allow external images from https-Locations"
+  },
+  {
+    "Id": 489,
+    "Title": "Convert needed HTML Entities to XML Entities"
+  },
+  {
+    "Id": 490,
+    "Title": "Saving to the server"
+  },
+  {
+    "Id": 491,
+    "Title": "text color"
+  }
+]

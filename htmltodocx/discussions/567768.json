@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1305862",
+    "ThreadId": "567768",
+    "Html": "Hi, I've the same problem described on the following discussion: <a href=\"http://htmltodocx.codeplex.com/discussions/401122\" rel=\"nofollow\">http://htmltodocx.codeplex.com/discussions/401122</a>\r<br />\n<br />\nThe &lt;br /&gt; tag, on Word 2010 and 2007, add an extra space.\r<br />\nUnfortunatly I'm not able to solve the problem as described on the other post.\r<br />\nHow can I solve this issue?\r<br />\n<br />\nThanks in advance<br />\n",
+    "PostedDate": "2014-09-18T03:16:29.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

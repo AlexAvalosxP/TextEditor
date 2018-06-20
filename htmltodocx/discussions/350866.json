@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "818688",
+    "ThreadId": "350866",
+    "Html": "\r\n<p>I'm trying to get a copyright symbol to render properly. Any tips?</p>\r\n",
+    "PostedDate": "2012-04-02T03:01:37.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "820262",
+    "ThreadId": "350866",
+    "Html": "<p>Entities such as &amp;copy; are not yet supported. <a href=\"/workitem/455\">I've added this to the issue tracker</a>.</p>",
+    "PostedDate": "2012-04-05T01:43:43.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

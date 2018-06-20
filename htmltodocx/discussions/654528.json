@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1473056",
+    "ThreadId": "654528",
+    "Html": "Hi!\r<br />\n<br />\nIs there already a Laravel package for this code?\r<br />\n<br />\nRaymond<br />\n",
+    "PostedDate": "2016-05-10T11:52:02.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1473084",
+    "ThreadId": "654528",
+    "Html": "No. Just went over to the Laravel website, and, apart from telling me that it is a PHP framework, nothing else about what it does/what makes it good...<br />\n",
+    "PostedDate": "2016-05-10T15:20:49.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

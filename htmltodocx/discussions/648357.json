@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1454557",
+    "ThreadId": "648357",
+    "Html": "Hi all,\r<br />\n<br />\nI try a lot of thing to play with lineheight in word but nothing works like expected.\r<br />\nIn <br />\n<pre><code>$styles['inline'] = </code></pre>\n\nI tried : <br />\n<pre><code>'line-height: 1.40em' =&gt; array (\n          'spacing' =&gt;  240,\n),</code></pre>\n\nBut that the font spacing ==&gt; space between chars\r<br />\n<br />\nI tried : <br />\n<pre><code>'line-height: 1.40em' =&gt; array (\n          'lineHeight' =&gt;  2.0,\n      ),</code></pre>\n\nBut that doesn't work\r<br />\n<br />\nIf someone knows a solution...\r<br />\nI use h2d_htmlconverter.php with last version of PHPWORLD (github). Everything work except that...\r<br />\n<br />\nThanks,\r<br />\n<br />\nJonathan<br />\n",
+    "PostedDate": "2015-12-04T03:41:48.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1469909",
+    "ThreadId": "648357",
+    "Html": "Hi !\r<br />\nSorry i don't want my reply to look spammy but..\r<br />\nI have the same issue :( have you ever managed to find a solution for this ?\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2016-04-13T01:11:12.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1470268",
+    "ThreadId": "648357",
+    "Html": "No solution for the moment.\r<br />\nBut I will have to search soon (professional problem). Then if I find, I will update the post...<br />\n",
+    "PostedDate": "2016-04-15T04:12:31.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

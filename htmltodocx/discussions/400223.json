@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "930115",
+    "ThreadId": "400223",
+    "Html": "\r\n<p>Hello neilt17, I want to create a web.&nbsp; I have a form and a textarea(tinymce). When I submit the form, I want that the textarea value, which is html due to tinymce output format, to get inserted in a position of a template keeping its styles. This is\r\n posible with &#65279;&#65279;htmlrodocx???</p>\r\n<p>Very Thanks in advance neilt17.</p>\r\n",
+    "PostedDate": "2012-10-21T12:23:57.337-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

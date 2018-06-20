@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "902457",
+    "ThreadId": "392586",
+    "Html": "\r\n<p>When i open the generated docx file on Libre Office, everything works fine.</p>\r\n<p><strong>When I try to open it on MS Word or preview with google docs, I get an error.</strong> It says that problem is with document.xml on line 37.&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>problem solved. topic should be deleted, because problem was with some modification of script.</p>\r\n",
+    "PostedDate": "2012-08-22T03:08:15.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

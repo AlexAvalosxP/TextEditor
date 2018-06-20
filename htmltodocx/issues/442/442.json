@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "In order to add images, one should call\n$section->addImage($src, [$style]);\nwhere $src is the path to the image on the web server (e.g. /var/www/mysite/image.jpg) and not the image URL (e.g. http://www.mysite.com/image.jpg).",
+    "LastUpdatedDate": "2012-05-08T14:40:55.267-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmltodocx",
+    "ReportedDate": "2012-03-27T09:16:05.733-07:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "<img> tag not correctly handled",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 442
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I suggest to add a new $state['base_url'] value, which should containt a string like 'http://localhost/mysite' or 'http://www.mysite.com'. In this way the correct image path (line 430) could be computed as:\r\n$phpword_element->addImage($state['base_root'] . substr($element->src, strlen($state['base_url'])), $state['current_style']);",
+      "PostedDate": "2012-03-27T09:38:35.443-07:00",
+      "Id": 73516
+    }
+  ]
+}

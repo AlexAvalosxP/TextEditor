@@ -1,0 +1,19 @@
+[
+  {
+    "Id": "0",
+    "Name": "htmltodocx_0_6_5_alpha",
+    "DevelopmentStatus": "Alpha",
+    "Description": "This release contains a modified version of PHPWord which addresses [url:this issue around the format of tables in Libre/Open Office|http://phpword.codeplex.com/workitem/31].",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-01-31T04:25:36.16-08:00",
+    "Files": [
+      {
+        "Id": "e6a7259c-8f0e-45b2-ac4a-eff83a6c3841",
+        "FileName": "htmltodocx_0_6_5_alpha.zip",
+        "Url": "./0/e6a7259c-8f0e-45b2-ac4a-eff83a6c3841",
+        "Type": "Source Code",
+        "UploadDate": "2013-01-31T03:39:05.373-08:00"
+      }
+    ]
+  }
+]

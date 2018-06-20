@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1498353",
+    "ThreadId": "663936",
+    "Html": "When I use html with Cyrillic symbols it create a docx file with currect sybols, BUT - only for the first tag. Here what i mean:\r<br />\nMy html:<br />\n&lt;p&gt;Привет!&lt;/p&gt;\r\n&lt;p&gt;Пока!&lt;/p&gt;\r\nIn docx file goes only &quot;Привет!&quot;\r<br />\nNext html:<br />\n&lt;p&gt;Hi!&lt;/p&gt;\r\n&lt;p&gt;Привет!&lt;/p&gt;\r\n&lt;p&gt;Bye!&lt;/p&gt;\r\n&lt;p&gt;Пока!&lt;/p&gt;\r\nIn docx file goes:\r<br />\n&quot;Hi!&quot;\r<br />\n&quot;Привет!&quot;\r<br />\nAs i see - class stuck after first occurs an Cyrillic symbols, no errors displayed. Any suggestions?<br />\n",
+    "PostedDate": "2017-11-03T15:17:12.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1498354",
+    "ThreadId": "663936",
+    "Html": "source HTML in UTF-8 <br />\n",
+    "PostedDate": "2017-11-03T15:26:06.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

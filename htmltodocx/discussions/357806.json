@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "842975",
+    "ThreadId": "357806",
+    "Html": "\r\n<p>Hi guys</p>\r\n<p>first of all! well done and good job for this project!</p>\r\n<p>i have problem when i try to convert</p>\r\n<p>&lt;p style=&quot;margin-left: 300px&quot;&gt; test hello world&lt;/p&gt;</p>\r\n<p>to docx</p>\r\n<p>However, there is not any spacer. it seams that css property margin does not work properly.</p>\r\n<p>could any one provide some example?</p>\r\n<p>&nbsp;</p>\r\n<p>thanks!</p>\r\n",
+    "PostedDate": "2012-05-31T02:27:37.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "846177",
+    "ThreadId": "357806",
+    "Html": "<p>Hi yee</p>\r\n<p>In the HTML to docx converter we use PHPWord text runs containing text elements to create separate paragraphs (defined by &lt;p&gt; tags in HTML), you cannot assign a margin left or margin right property to these (see the PHPWord documentation). You can however assign a margin to a whole block of HTML you convert - see line 17 of example.php:</p>\r\n<p>\r\n<pre>$section = $phpword_object-&gt;createSection();</pre>\r\n</p>\r\n<p>You can add a margin to this section before adding in your HTML, for example:</p>\r\n<p>\r\n<pre>$sectionStyle = array('marginLeft' =&gt; 300);\r\n$section = $phpword_object-&gt;createSection($sectionStyle);</pre>\r\nSee page 5 of the PHPWord documentation for an explanation of this.</p>",
+    "PostedDate": "2012-06-07T11:06:29.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

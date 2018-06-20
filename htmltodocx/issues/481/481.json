@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Without any style applied, an extra line between paragraphs is added - so that there are two empty lines between each paragraph see: http://htmltodocx.codeplex.com/discussions/401122. This affects Word 2010 (and 2007?). It does not affect Word 2003.",
+    "LastUpdatedDate": "2012-11-05T13:39:49.983-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmltodocx",
+    "ReportedDate": "2012-11-05T13:30:47.307-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Line spacing in Word 2010",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 481
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

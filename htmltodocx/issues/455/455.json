@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 3,
+    "Custom": "",
+    "Description": "To add support for HTML entities such as &copy; (see: http://www.w3schools.com/tags/ref_entities.asp).",
+    "LastUpdatedDate": "2012-12-07T12:49:07.44-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmltodocx",
+    "ReportedDate": "2012-04-05T01:40:41.723-07:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Support for HTML entities",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 455
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Awesome! I spent a lot of time fixing the trademarks, but now that you've fixed it's better. Thanks much!",
+      "PostedDate": "2012-05-13T22:50:31.563-07:00",
+      "Id": 73517
+    },
+    {
+      "Message": "I am having some trouble with HTML entities. When the html has html entities like &amp; the resulting document can not be opened by Microsoft Word with the error \"No error detail available\".\nIf I remove the html entities from the text there is no error.",
+      "PostedDate": "2012-12-05T05:39:24.83-08:00",
+      "Id": 83585
+    },
+    {
+      "Message": "Hi johannesdr\n\nThis was fixed back in May (http://htmltodocx.codeplex.com/SourceControl/changeset/3acb52d70002) - are you using the latest version of the code? I am not getting this problem myself.",
+      "PostedDate": "2012-12-07T12:49:07.44-08:00",
+      "Id": 83792
+    }
+  ]
+}

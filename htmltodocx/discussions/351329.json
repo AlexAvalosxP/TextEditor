@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "820427",
+    "ThreadId": "351329",
+    "Html": "<p>First of all - <strong>nice project</strong>!</p>\n<p><span style=\"text-decoration: underline;\">The problem:</span></p>\n<p>When i`m adding images to the section they go to the top of the page. No matter how through <em>htmlconverter</em> or <em>$section-&gt;addImage( $src, $imageStyle );</em>&nbsp; images end up at the top of the exported file. Also the images are arranged backwards - LIFO (<em>last-in, first-out</em>). I will be thankful for any help.</p>\n<p>P.S. I don`t use template file.</p>",
+    "PostedDate": "2012-04-05T08:29:58.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "835138",
+    "ThreadId": "351329",
+    "Html": "<p>Sorry for delayed response - did you ever sort this out? I haven't been able to reproduce this problem.</p>",
+    "PostedDate": "2012-05-11T07:23:35.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "835511",
+    "ThreadId": "351329",
+    "Html": "<p>Yes i sort the problem out. Actually the problem was because i was using LibreOffice (v3.5.0) to open the files. In MS Office the pictures and other elements appeared correctly!</p>",
+    "PostedDate": "2012-05-12T08:00:12.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

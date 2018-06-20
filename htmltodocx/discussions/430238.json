@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "989506",
+    "ThreadId": "430238",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>&nbsp;</p>\r\n<p>First, let me say that this is a great project and I'm very happy that I found it.</p>\r\n<p>Now, my only problem is that I have no idea how to include inline styles (from the TinyMCE saved HTML content) and have those styles show up in my docx document.</p>\r\n<p>I tried looking at the documentation, but couldn't understand how styles are used!<br>\r\n<br>\r\nThank you for your help!&nbsp;</p>\r\n",
+    "PostedDate": "2013-01-20T22:40:17.493-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "989534",
+    "ThreadId": "430238",
+    "Html": "\r\n<p>Browse to documentation/show_raw_file.php?file=docs_styles.inc - there is an example of setting up inline styles there (<code><span style=\"color:#000000\"><span style=\"color:#0000bb\">$styles</span><span style=\"color:#007700\">[</span><span style=\"color:#dd0000\">'inline'</span><span style=\"color:#007700\">]</span></span></code>).\r\n Note you have to set the keys of that array to match the key-values of any inline style, e.g. if you have different font sizes in your inline style you would have to set up a different one for each font size.<code><span style=\"color:#000000\"><span style=\"color:#007700\">\r\n<br>\r\n</span></span></code></p>\r\n",
+    "PostedDate": "2013-01-21T00:10:47.507-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "989542",
+    "ThreadId": "430238",
+    "Html": "\r\n<p>I assume you are talking about the following:</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>$styles[<span style=\"color:#a31515\">'inline'</span>] = \r\n    <span style=\"color:blue\">array</span>(\r\n      <span style=\"color:#a31515\">'text-decoration: underline'</span> =&gt; <span style=\"color:blue\">array</span> (\r\n        <span style=\"color:#a31515\">'underline'</span> =&gt; PHPWord_Style_Font::UNDERLINE_SINGLE,\r\n      ),\r\n      <span style=\"color:#a31515\">'float: left'</span> =&gt; <span style=\"color:blue\">array</span> (\r\n        <span style=\"color:#a31515\">'align'</span> =&gt; <span style=\"color:#a31515\">'left'</span>,\r\n      ),\r\n      <span style=\"color:#a31515\">'float: none'</span> =&gt; <span style=\"color:blue\">array</span> (\r\n        <span style=\"color:#a31515\">'align'</span> =&gt; <span style=\"color:#a31515\">'center'</span>,\r\n      ),\r\n      <span style=\"color:#a31515\">'float: right'</span> =&gt; <span style=\"color:blue\">array</span> (\r\n        <span style=\"color:#a31515\">'align'</span> =&gt; <span style=\"color:#a31515\">'right'</span>,\r\n      ),\r\n    );\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>How would I convert the following tinymce output for example?</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">p</span><span style=\"color:blue\">&gt;</span><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">strong</span> <span style=\"color:red\">style</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;font-family: Arial, Helvetica, sans; font-size: 11px; line-height: 14px; text-align: justify;&quot;</span><span style=\"color:blue\">&gt;</span>Lorem Ipsum<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">strong</span><span style=\"color:blue\">&gt;</span><span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">p</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2013-01-21T00:27:27.78-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "989575",
+    "ThreadId": "430238",
+    "Html": "\r\n<p>You need to work through each bit of your style and find an equivalent PHPWord style - from the PHPWord manual - PHPWord_Docs_0.6.2.docx in the phpword directory, and put these in the inline part of the styles array, e.g.:</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>$styles[<span style=\"color:#a31515\">'inline'</span>] = \r\n    <span style=\"color:blue\">array</span>(\r\n      <span style=\"color:#a31515\">'font-family: Arial'</span> =&gt; <span style=\"color:blue\">array</span> (\r\n        <span style=\"color:#a31515\">'name'</span> =&gt; 'Arial',\r\n      ),\r\n      <span style=\"color:#a31515\">'font-size: 11px'</span> =&gt; <span style=\"color:blue\">array</span> (\r\n        <span style=\"color:#a31515\">'size'</span> =&gt; <span style=\"color:#a31515\">11</span>,\r\n      ),\r\n      ...\r\n    );\r\n</pre>\r\n</div>\r\n<p></p>\r\n",
+    "PostedDate": "2013-01-21T01:43:47.713-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "989617",
+    "ThreadId": "430238",
+    "Html": "\r\n<p>Ok, I see. Thanks alot! I will report here if I have any more trouble once I look over the PHPWord Documentation.</p>\r\n<p>Cheers.</p>\r\n",
+    "PostedDate": "2013-01-21T02:57:10.847-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "990098",
+    "ThreadId": "430238",
+    "Html": "\r\n<p>Hi Neil,</p>\r\n<p>I've run into another issue. TinyMCE will output some HTML like the following (<em> and\r\n<strong>tags; italic and bold):</strong></em></p>\r\n<p><em><strong></p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">em</span><span style=\"color:blue\">&gt;</span>Emphasized text<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">em</span><span style=\"color:blue\">&gt;</span>\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">strong</span><span style=\"color:blue\">&gt;</span>Strong text<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">strong</span><span style=\"color:blue\">&gt;</span>\n</pre>\r\n</div>\r\nHow do I translate that into Docx? </strong></em>\r\n<p>**Edit: Nevermind, I found those in the docs_style.inc example file defined under $styles['elements'].</p>\r\n<p>Thanks again for your great work on this plugin!</p>\r\n<em><strong></strong></em>\r\n<p></p>\r\n",
+    "PostedDate": "2013-01-21T21:44:06.203-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

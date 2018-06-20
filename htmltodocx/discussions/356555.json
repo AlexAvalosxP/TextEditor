@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "838940",
+    "ThreadId": "356555",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>i just try example_html and my own html and in both cases i got .docx without images.</p>\r\n<p>I'm running script on apache 2.2 and with php 5.4.x. I also tried with php 5.3.x and same result - without images.</p>\r\n<p>Thanks for advice.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards, D</p>\r\n",
+    "PostedDate": "2012-05-21T07:52:48.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "846273",
+    "ThreadId": "356555",
+    "Html": "<p>Did you solve this? If not, perhaps check what base_root and base_path are set to in example.php (lines 31-32) - you may well need to change these.</p>",
+    "PostedDate": "2012-06-07T14:53:17.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "848971",
+    "ThreadId": "356555",
+    "Html": "<p>Awesome, that helps!</p>\r\n<p>Big thanks to you!</p>\r\n<p>&nbsp;</p>\r\n<p>Regards, D</p>",
+    "PostedDate": "2012-06-14T06:26:08.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

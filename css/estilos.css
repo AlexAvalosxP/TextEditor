@@ -324,3 +324,24 @@ cursor: pointer;
 .save:hover{
 background-color: #64acce;
 }
+
+.download{
+position: fixed;
+margin-top: 19.5%;
+margin-left: 85.1%;
+width: 120px;
+background: #3C95BF;
+color: white;
+text-align: center;
+height: 40px;
+border: none;
+border-radius: 2px 2px 2px 2px;
+font-family: sans-serif;
+font-size: 1.0em;
+-webkit-transition-duration: 0.4s;
+transition-duration: 0.4s;
+cursor: pointer;
+}
+.download:hover{
+background-color: #64acce;
+}

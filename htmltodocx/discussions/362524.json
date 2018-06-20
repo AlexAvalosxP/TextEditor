@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "859139",
+    "ThreadId": "362524",
+    "Html": "\r\n<p>Hi</p>\r\n<p>I would like to use the same function than with values : $document-&gt;setValue($search,$replace);</p>\r\n<p>with my html converted to docx.</p>\r\n<p>I need just to replace the $search by my html code. I don't need to create a new file and in fact if i create a new one, i don't know how to insert the content in the other file.</p>\r\n<p>&nbsp;</p>\r\n<p>How can i do ?</p>\r\n<p>&nbsp;</p>\r\n<p>Thx</p>\r\n",
+    "PostedDate": "2012-07-09T05:28:54.337-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "947344",
+    "ThreadId": "362524",
+    "Html": "\r\n<p>hi, i've had the same problem and created a simple php function :</p>\r\n<p>https://h2openxml.codeplex.com/</p>\r\n<p>use it to convert your html to openxml, then you can use the setValue function.</p>\r\n<p>Feel free to add content to it, for now it can only do some HTML styles (bold, italic, underlined, and bullet lists)</p>\r\n<p>i will add more with time</p>\r\n",
+    "PostedDate": "2012-11-26T15:54:17.017-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "949498",
+    "ThreadId": "362524",
+    "Html": "\r\n<p>did you try on a template ?</p>\r\n<p>&nbsp;</p>\r\n<p>your script makes errors.</p>\r\n<p>&nbsp;</p>\r\n<p>In fact to insert an html formatted text, you would to have to up to precedent &lt;w:p&gt; so setValue can't work.</p>\r\n",
+    "PostedDate": "2012-11-30T05:05:12.477-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "949537",
+    "ThreadId": "362524",
+    "Html": "\r\n<p>it works for the template i'm using.</p>\r\n<p>What errors do you have ?</p>\r\n<p>&nbsp;</p>\r\n<p>(i used my own styles &quot;&lt;w:pStyle w:val='BulletStyle'/&gt;&quot; to format the text i put into the docx document)</p>\r\n",
+    "PostedDate": "2012-11-30T06:57:46.603-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

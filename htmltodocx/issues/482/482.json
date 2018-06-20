@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2013-03-01T14:30:51.99-08:00",
+    "CommentCount": 2,
+    "Custom": null,
+    "Description": "First of all thank you for this awesome project! I'm currently using it for a drupal project to create printable documents from nodes and it saved me a lot of time!\r\n\r\nCurrently i'm looking for a way to add html as a footer to the document.\r\n\r\nI think it shouldn't be much efford to implement, because the classes \"PHPWord_Section\" and  \"PHPWord_Section_Header\" are providing almost the same functionality to add content.\r\n\r\nIs there a maybe already a solution to use htmltodocx for this? How would you solve it? \r\n",
+    "LastUpdatedDate": "2013-03-01T14:30:51.99-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "htmltodocx",
+    "ReportedDate": "2013-02-27T03:44:57.553-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Document header and footer from html",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 482
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I'm sorry was my bad!\neverything is working now! Awesome Library!\nThank you and sorry for this Issue!",
+      "PostedDate": "2013-02-28T03:23:59.487-08:00",
+      "Id": 91793
+    },
+    {
+      "Message": "OK, no problem.\n:-)",
+      "PostedDate": "2013-03-01T14:30:36.873-08:00",
+      "Id": 92010
+    }
+  ]
+}

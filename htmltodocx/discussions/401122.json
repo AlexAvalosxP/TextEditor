@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "933816",
+    "ThreadId": "401122",
+    "Html": "\r\n<p>I have had a real problem with line spacing in word 2010. When a document is generated, the paragragh type is normal and all new lines 'br' are doubled spaced.</p>\r\n<p>The only way I was able to resolve this was to edit h2d_htmlconveror.php and change line 647 to the following.</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">case</span> <span style=\"color:#a31515\">'br'</span>:\n        <span style=\"color:green\">// Simply create a new text run:</span>\n        <span style=\"color:green\">//$state['textrun'] = $phpword_element-&gt;createTextRun();</span>\n        $state[<span style=\"color:#a31515\">'textrun'</span>] = $phpword_element-&gt;createTextRun($state[<span style=\"color:#a31515\">'current_style'</span>]);\n</pre>\r\n</div>\r\n<br>\r\n<br>\r\nI could then add to my style.inc file the following<br>\r\n<br>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">array</span> (                      \n      <span style=\"color:#a31515\">'br'</span> =&gt; <span style=\"color:blue\">array</span> (\n          <span style=\"color:#a31515\">'spaceBefore'</span> =&gt; 0,\n          <span style=\"color:#a31515\">'spaceAfter'</span> =&gt; 0,\n          <span style=\"color:#a31515\">'spacing'</span> =&gt; 1.15,\n        ), \n</pre>\r\n</div>\r\n<br>\r\n<br>\r\nShould this be done a different way? Is this safe?\r\n<p></p>\r\n",
+    "PostedDate": "2012-10-29T07:12:34.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "936939",
+    "ThreadId": "401122",
+    "Html": "<p>Yes, this is a problem, with Word 2007 and 2010. I've added this to the issue tracker to have a look at it.</p>",
+    "PostedDate": "2012-11-05T13:26:56.477-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

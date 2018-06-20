@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1000453",
+    "ThreadId": "432939",
+    "Html": "Hi,\r<br />\n<br />\nI'm new to PHPWord and have had play round with some of the examples.\r<br />\nWhat I'm after, is to use the htmltodocx function, whilst using a template.\r<br />\nI've tried to load the template, sections, add html:<br />\n<pre><code>$PHPWord = new PHPWord();\n$document = $PHPWord-&gt;loadTemplate('Template.docx');\n$section = $PHPWord-&gt;createSection();\n\n$html_dom = new simple_html_dom();\n$html_dom-&gt;load('&lt;html&gt;&lt;body&gt;' . $html . '&lt;/body&gt;&lt;/html&gt;');\n...etc...\n$objWriter = PHPWord_IOFactory::createWriter($document, 'Word2007');</code></pre>\n\nbut when I try to write to the file, I get an error:<br />\n<blockquote>\nArgument 1 passed to PHPWord_IOFactory::createWriter() must be an instance of PHPWord, instance of PHPWord_Template given<br />\n</blockquote>\n",
+    "PostedDate": "2013-02-13T01:22:38.23-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

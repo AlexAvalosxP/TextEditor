@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1039874",
+    "ThreadId": "442684",
+    "Html": "Hey, \r<br />\n<br />\nI'm trying to put a front page in a separate section before the main content, because the front page should not contain a header and footer like the other pages of my exported document. \r<br />\n<br />\nAs soon as i add content before i add the toc, the table of content is not added to the document. \r<br />\nCan anyone tell me why this fails? Is this maybe a bug? \r<br />\n<br />\nTHX, \r<br />\n<br />\nJan<br />\n",
+    "PostedDate": "2013-05-06T06:51:37.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058156",
+    "ThreadId": "442684",
+    "Html": "Hey Jan,\r<br />\n<br />\nNot sure if you resolve this problem but I fixed it by declaring more then one section:<br />\n<pre><code>  // Section for the front page\n  $front = $PHPWord-&gt;createSection();\n  // Section for the rest of the documents\n  $section = $PHPWord-&gt;createSection();</code></pre>\n\nCliff<br />\n",
+    "PostedDate": "2013-06-18T05:30:01.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

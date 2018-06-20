@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I could not find a way to add paragraph styles. My goal was to have a table cell with spaceAfter = 0.... ended up using PHPWord directly.\r\n\r\n\r\nEdit: maybe it is also a bug in PHPWord? It seems if you add a emtpy cell, it is not possible to avoid the space-after. however if you add empty text to the cell with spaceafter=0, it works.",
+    "LastUpdatedDate": "2014-01-29T03:00:42.197-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmltodocx",
+    "ReportedDate": "2014-01-29T01:44:32.053-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "No Paragraph-Styles added",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 484
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

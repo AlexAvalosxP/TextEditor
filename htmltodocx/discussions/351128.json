@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "819701",
+    "ThreadId": "351128",
+    "Html": "<p>i downloaded zip file of htmltodocx converter and tried to run it with example.php file which is included in it.</p>\n<p>&nbsp;</p>\n<p>I get following errors&nbsp; :</p>\n<p>﻿﻿﻿﻿<strong>Notice</strong>: Undefined index: text in <strong>C:\\xampp\\htdocs\\htmltodocx\\htmltodocx\\htmlconverter\\h2d_htmlconverter.php</strong> on line <strong>134</strong><br /> <br /> <strong>Notice</strong>: Undefined index: text in <strong>C:\\xampp\\htdocs\\htmltodocx\\htmltodocx\\htmlconverter\\h2d_htmlconverter.php</strong> on line <strong>134</strong><br /> <br /> <strong>Notice</strong>: Undefined index: textrun in <strong>C:\\xampp\\htdocs\\htmltodocx\\htmltodocx\\htmlconverter\\h2d_htmlconverter.php</strong> on line <strong>421</strong><br /> <br /> <strong>Notice</strong>: Undefined index: p in <strong>C:\\xampp\\htdocs\\htmltodocx\\htmltodocx\\htmlconverter\\h2d_htmlconverter.php</strong> on line <strong>134</strong><br /> <br /> <strong>Notice</strong>: Undefined index: text in <strong>C:\\xampp\\htdocs\\htmltodocx\\htmltodocx\\htmlconverter\\h2d_htmlconverter.php</strong> on line <strong>134</strong><br /> <br /> <strong>Notice</strong>: Undefined index: text in <strong>C:\\xampp\\htdocs\\htmltodocx\\htmltodocx\\htmlconverter\\h2d_htmlconverter.php</strong> on line <strong>134</strong><br /> <br /> <strong>Notice</strong>: Undefined index: textrun in <strong>C:\\xampp\\htdocs\\htmltodocx\\htmltodocx\\htmlconverter\\h2d_htmlconverter.php</strong> on line <strong>421</strong><br /> <br /> <strong>Notice</strong>: Undefined index: p in <strong>C:\\xampp\\htdocs\\htmltodocx\\htmltodocx\\htmlconverter\\h2d_htmlconverter.php</strong> on line <strong>134</strong><br /> <br /> <strong>Notice</strong>: Undefined index: text in <strong>C:\\xampp\\htdocs\\htmltodocx\\htmltodocx\\htmlconverter\\h2d_htmlconverter.php</strong> on line <strong>134</strong><br /> <br /> <strong>Notice</strong>: Undefined index: text in <strong>C:\\xampp\\htdocs\\htmltodocx\\htmltodocx\\htmlconverter\\h2d_htmlconverter.php</strong> on line <strong>134</strong><br /> <br /> <strong>Notice</strong>: Undefined index: textrun in <strong>C:\\xampp\\htdocs\\htmltodocx\\htmltodocx\\htmlconverter\\h2d_htmlconverter.php</strong> on line <strong>421</strong><br /> <br /> <strong>Notice</strong>: Undefined index: text in <strong>C:\\xampp\\htdocs\\htmltodocx\\htmltodocx\\htmlconverter\\h2d_htmlconverter.php</strong> on line <strong>134</strong><br /> <br /> <strong>Notice</strong>: Undefined index: text in <strong>C:\\xampp\\htdocs\\htmltodocx\\htmltodocx\\htmlconverter\\h2d_htmlconverter.php</strong> on line <strong>134</strong><br /> <br /> <strong>Notice</strong>: Undefined index: textrun in <strong>C:\\xampp\\htdocs\\htmltodocx\\htmltodocx\\htmlconverter\\h2d_htmlconverter.php</strong> on line <strong>421</strong></p>\n<p>&nbsp;</p>\n<p><strong>and many more i dont understand whats the problem.</strong></p>\n<p>&nbsp;</p>\n<p><strong>kindly help.<br /> </strong></p>\n<p>﻿﻿﻿</p>",
+    "PostedDate": "2012-04-04T02:44:35.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "820027",
+    "ThreadId": "351128",
+    "Html": "<p>Hi Vibhas,</p>\r\n<p>You can stop this happening by getting PHP to suppress \"Notice\" errors - see for example&nbsp;<a href=\"http://www.dmxzone.com/go?13811\">http://www.dmxzone.com/go?13811</a>. I didn't have E_NOTICE error reporting when I was developing this (at least one well known CMS I was using had a lot these - so I needed to have it switched off). I will be able to remove these errors in future by checking to see if the offending variables have been set. Anyway if you switch off the notice errors in php.ini for example (the usual default - see:&nbsp;<a href=\"http://uk3.php.net/manual/en/errorfunc.configuration.php#ini.error-reporting\">http://uk3.php.net/manual/en/errorfunc.configuration.php#ini.error-reporting</a>) it should all run fine.</p>",
+    "PostedDate": "2012-04-04T12:42:40.79-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "820254",
+    "ThreadId": "351128",
+    "Html": "<p>See:&nbsp;<a href=\"http://htmltodocx.codeplex.com/workitem/441\">http://htmltodocx.codeplex.com/workitem/441</a></p>",
+    "PostedDate": "2012-04-05T01:36:32.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "Presently inline styles contained in an HTML element are replaced with a PHPWord attribute-value pair using an array which requires you to define the entire css attribute-value pair you want to map to a PHPWord one. This is highly inefficient for obtaining a style which includes a numerical value (e.g. colours and spacings), as, for example, you'd need to define each colour value you want to map to a PHPWord colour value. This improvement would allow variables to be included in the style mapping, with a conversion where necessary (e.g. pixels to twips).",
+    "LastUpdatedDate": "2011-11-26T07:25:23.897-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Medium",
+      "Severity": 100,
+      "Id": 2
+    },
+    "ProjectName": "htmltodocx",
+    "ReportedDate": "2011-11-26T07:25:17.73-08:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Improve handling of inline styles",
+    "Type": {
+      "Name": "Task",
+      "Id": 2
+    },
+    "VoteCount": 1,
+    "Id": 311
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

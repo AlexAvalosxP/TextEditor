@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1435053",
+    "ThreadId": "641573",
+    "Html": "In response to a question from Sudesh K (as follows):\r<br />\n<br />\nFirst thanks for providing htmltodocx package, I have been using htmltodocx package to convert html to docx when I was using this I encountered with one issue i.e; I am not able to add any nested tables . There was one note which said nested tables cannot be used,its a constraint in PHPWord When I was seeing PHPWord regarding this issue they said current version of PHPWord has fixed this issue, is there any updated htmltodocx  package which will support adding nested table? If so kindly provide the updated htmltodocx package\r<br />\n<br />\n<strong>Reply</strong>\r<br />\nIf you do have a more recent version of PHP Word which supports nested tables, you are welcome to try it - replace the older version which is bundled with the HTML to docx converter with the newer one. Then, to get nesting to work, you will need to look at h2d_htmlconverter.php, and, look at line 365 and probably removing the lines which prevent nested tables:<br />\n<pre><code>if (!$state['table_allowed'] || in_array('td', $state['parents']) || in_array('th', $state['parents'])) {\n            $state['table_allowed'] = FALSE; // This is a PHPWord constraint\n          } ...</code></pre>\n\nLet me know how you get on.<br />\n",
+    "PostedDate": "2015-07-19T23:49:15.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1435431",
+    "ThreadId": "641573",
+    "Html": "I have removed the line as you have mentioned and along with that , I have also removed <br />\n<pre><code>$state['table_allowed']</code></pre>\n\nWhich were used in the if condition's\r<br />\n<br />\nNow when I try to download the word document for the table below<br />\n<pre><code>&lt;table&gt;\n        &lt;tr&gt;\n            &lt;td&gt;\n                Value1\n            &lt;/td&gt;\n            &lt;td&gt;\n                Value2\n            &lt;/td&gt;\n            &lt;td&gt;\n                &lt;table&gt;\n                    &lt;tr&gt;&lt;td&gt;Nested Value&lt;/td&gt;&lt;/tr&gt;\n                &lt;/table&gt;\n            &lt;/td&gt;\n            &lt;td&gt;\n                Value3\n            &lt;/td&gt;\n        &lt;/tr&gt;       \n    &lt;/table&gt;</code></pre>\n\nI am getting 'Value 3' Immediately after  'Nested Value'  i.e Value3 is coming under nested table and not under main table\r<br />\nIs there anything else which I need to add/remove?<br />\n",
+    "PostedDate": "2015-07-21T21:52:51.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1435498",
+    "ThreadId": "641573",
+    "Html": "First off, are you absolutely sure the version of PHP Word you have can do nested tables? The version of PHP Word bundled with the HTML to docx converter is the same as the one currenlty offered for download on Codeplex as far as I can tell - and that didn't do nested tables. Or are you using a different version from elsewhere? If you haven't done so already, look at the PHPWord documentation and check that you can create nested tables programatically - using just PHP Word (not using HTML to docx converter).<br />\n",
+    "PostedDate": "2015-07-22T03:37:26.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "845908",
+    "ThreadId": "358681",
+    "Html": "\r\n<p>Hi everyone!</p>\r\n<p>I've got HTML in my DB and I want to convert that to docx. Is there anyway to convert HMTL to Docx. It's no problem when its not a new document, showing the docx 'code' on the sreen is good enough.</p>\r\n<p>So I'm looking for the name of the function that converts the HTML to Docx. Anyone an idea?</p>\r\n<p>Kind regards!</p>\r\n",
+    "PostedDate": "2012-06-07T01:23:17.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "846168",
+    "ThreadId": "358681",
+    "Html": "\r\n<p>Hi roestbak</p>\r\n<p>Well, this is what this project does.</p>\r\n<p>For an example of how to perform the conversion, look at the file &quot;example.php&quot; (in the htmltodocx folder). For a bit more detailed documentation, put the files on your web server and browse to&nbsp;htmltodocx/documentation/index.php.&nbsp;</p>\r\n",
+    "PostedDate": "2012-06-07T10:41:21.743-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "846445",
+    "ThreadId": "358681",
+    "Html": "<p>Hi neilt17!</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks for your reaction.</p>\r\n<p>When I look to the example there's an URL provided witch you want to convert to docx. I'm looking for the name of the function thats converts the html to docx. I tried the h2d_insert_html function but that doens't work. I've got a query witch is putting some HTML data out of my DB and I want to convert that to docx. I'm using an other tool to create the final docx.</p>\r\n<p>Kind regards!</p>",
+    "PostedDate": "2012-06-08T01:12:41.18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "846702",
+    "ThreadId": "358681",
+    "Html": "<p>The function that does all the work is&nbsp;h2d_insert_html_recursive() (called from hd2_insert_html()). This is entirely dependent on PHPWord, so if you are not feeding a PHPWord object into it it won't work. I guess you could use another tool, but you would need to rewrite a lot of the code here to work with the methods that that tool uses to create a docx document. By the way, what tool are you thinking of using?</p>",
+    "PostedDate": "2012-06-08T10:42:31.96-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "847803",
+    "ThreadId": "358681",
+    "Html": "<p>Hi!</p>\r\n<p>Thanks for your answer!</p>\r\n<p>I've got an web-application witch creates HTML-reports. I also want the report as an Word document. With this tool I can convert a whole HTML-page, but I've got some trouble with tables. Sometimes I've got in a tablerow one collum and sometimes a row has multiple columns. I'm using the 'collspan' at the one-collum tablerow to make it look even width as a row with 4 columns. When I'm using this tool to convert the html to docx my collspan is broken. And I cannot fix it.</p>\r\n<p>I also tried another tool (openTBS). They are working with an docx template and they parse my stuff (from DB) into the template. Works great with tables but not with HTML-data from my DB.</p>\r\n<p>My idea was to combine both tools but I don't think that is going to work...</p>",
+    "PostedDate": "2012-06-12T01:28:23.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

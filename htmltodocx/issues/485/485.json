@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\r\nI am facing an issue in htmltodocx library as colspan of table not merging columns when it is opened in MS Word. The cell is being displayed broken without merge.\r\n\r\nI have implemented the below example :-\r\nhttps://htmltodocx.codeplex.com/documentation\r\n\r\nIts working properly in LibreOffice but not in MS Word.\r\n\r\nPlease let me know if anyone has solution for this.\r\n\r\nPS: I have attached the docx file with this post.\r\n\r\nRegards,\r\nVivek",
+    "LastUpdatedDate": "2014-05-20T10:56:33.623-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmltodocx",
+    "ReportedDate": "2014-02-24T21:07:06.713-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "colspan not merging columns in MS Word ",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 485
+  },
+  "FileAttachments": [
+    {
+      "FileId": 806250,
+      "FileName": "word.docx",
+      "DownloadUrl": ".\\806250"
+    }
+  ],
+  "Comments": []
+}

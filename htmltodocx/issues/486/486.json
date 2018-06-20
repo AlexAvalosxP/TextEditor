@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I replaced the Pseudo-Lists-Code in _h2d_htmlconverter.php_ with the following to achieve real lists with correct levels.\r\n__You have to update to phpword >= 0.11.0 to use this.__\r\n_from Line 483 on:_\r\n```\r\n      case 'ul':\r\n      \t$state['list_depth'] = $state['list_depth'] + 1;\r\n      \tif (in_array('ul', $allowed_children)) {\r\n      \t\tarray_unshift($state['parents'], 'ul');\r\n      \t\thtmltodocx_insert_html_recursive($phpword_element, $element->nodes, $state);\r\n      \t\tarray_shift($state['parents']);\r\n      \t}\r\n      \telse {\r\n      \t\t$state['textrun'] = $phpword_element->createTextRun();\r\n      \t\t$state['textrun']->addText(htmltodocx_clean_text($element->innertext),  $state['current_style']);\r\n      \t}\r\n      \t$state['list_depth'] = $state['list_depth'] - 1;\r\n      break;\r\n      \r\n      case 'ol':\r\n      \t$state['list_depth'] = $state['list_depth'] + 1;\r\n      \tif (in_array('ol', $allowed_children)) {\r\n      \t\tarray_unshift($state['parents'], 'ol');\r\n      \t\thtmltodocx_insert_html_recursive($phpword_element, $element->nodes, $state);\r\n      \t\tarray_shift($state['parents']);\r\n      \t}\r\n      \telse {\r\n      \t\t$state['textrun'] = $phpword_element->createTextRun();\r\n      \t\t$state['textrun']->addText(htmltodocx_clean_text($element->innertext),  $state['current_style']);\r\n      \t}\r\n      \t$state['list_depth'] = $state['list_depth'] - 1;\r\n      break;\r\n      \r\n      case 'li':\r\n      \tif (in_array('li', $allowed_children)) {\r\n      \t\t$style = $state['current_style'];\r\n      \t\tarray_unshift($state['parents'], 'li');\r\n      \t\t$listItemRun = $phpword_element->addListItemRun($state['list_depth'] - 1, ($state['parents'][0] == 'ol') ? \\PhpOffice\\PhpWord\\Style\\ListItem::TYPE_NUMBER : \\PhpOffice\\PhpWord\\Style\\ListItem::TYPE_BULLET_FILLED, $style);\r\n      \t\t$state['textrun'] = $listItemRun;\r\n\t      \thtmltodocx_insert_html_recursive($phpword_element, $element->nodes, $state);\r\n\t      \tarray_shift($state['parents']);\r\n\t      \t\r\n\t    }else {\r\n          $state['textrun']->addText(htmltodocx_clean_text($element->innertext),  $state['current_style']);\r\n        }\r\n      break;\r\n```\r\nI am not sure if I disabled some hacks/fixes by doing that, but it seems to work fine. Maybe someone more experienced could review the code.\r\n\r\nTo update to phpword 0.11.0 all I had to change were the class names, as they are namespaced now.\r\ne.g.:\r\n```\r\n$phpWord = new \\PhpOffice\\PhpWord\\PhpWord();\r\n```\r\n\r\nRegards\r\n\r\n",
+    "LastUpdatedDate": "2014-06-25T03:38:04.183-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "htmltodocx",
+    "ReportedDate": "2014-06-25T03:38:04.183-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Real Lists with phpword >= 0.11.0",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 486
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

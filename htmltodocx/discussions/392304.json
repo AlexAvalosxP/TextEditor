@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "901481",
+    "ThreadId": "392304",
+    "Html": "\r\n<p>Hi there,</p>\r\n<p>Do you know how I could add a page break into the code?&nbsp;</p>\r\n<p>I'm trying to get it to print a report where I have an image, then html formatted text underneath the images, with each image appearing on a separate page.&nbsp;</p>\r\n<p>TIA</p>\r\n",
+    "PostedDate": "2012-08-20T03:54:17.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1137321",
+    "ThreadId": "392304",
+    "Html": "Hi, did you figure out a solution to this? I'm having the same problem. Thanks!<br />\n",
+    "PostedDate": "2013-12-17T18:09:35.577-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1149812",
+    "ThreadId": "392304",
+    "Html": "Hi, \r<br />\n<br />\nGot the same problem and fixed it like this: \r<br />\n<br />\nOpen :  \\htmltodocx_converter\\htmltodocx_converter.php \r<br />\n<br />\nFind: <br />\n<pre><code>  case 'img':\n        $image_style = array();\n        if ($element-&gt;height &amp;&amp; $element-&gt;width) {\n          $state['current_style']['height'] = $element-&gt;height;\n          $state['current_style']['width'] = $element-&gt;width; \n        }\n        \n        if (strpos($element-&gt;src, $state['base_root']) === 0) {\n          // The image source is a full url, but nevertheless it is on this\n          // server.\n          $element_src = substr($element-&gt;src, strlen($state['base_root']));\n        }\n        else {\n          $element_src = $element-&gt;src;\n        }\n        \n        if (strpos($element_src, 'http://') === 0) {\n          // The image url is from another site. Most probably the image won't\n          // appear in the Word document.\n          $src = $element_src;\n        }\n        elseif (strpos($element_src, '/') === 0) {\n          $src = htmltodocx_doc_root() . $element_src;\n        }\n        else {\n          $src = htmltodocx_doc_root() . $state['base_path'] . $element_src; \n        }\n        \n        $phpword_element-&gt;addImage($src, $state['current_style']);\n\n      break;</code></pre>\n\nInsert after &quot;break;&quot;<br />\n<pre><code>      case 'pagebreak':\n        // Simply create pagebreak: \n        $state['textrun'] = $phpword_element-&gt;addPageBreak();\n      break; </code></pre>\n\nU can use now the tag &lt;pagebreak&gt;&lt;/pagebreak&gt; in your html code ...<br />\n",
+    "PostedDate": "2014-01-05T17:42:00.253-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1150250",
+    "ThreadId": "392304",
+    "Html": "That's good. Thinking about taking this further, and so people could do this without necessarily having to modify their original HTML:\r<br />\n<br />\nThe standard way of adding page breaks is using one of these CSS properties on an element: page-break-before or page-break-after. So the way to do it here could be to allow a couple of non-PHPWord style properties to be added into a htmltodocx styles array. For example:<br />\n<pre><code>  $styles['classes'] = \n    array (\n      'my-page-break-style' =&gt; array (\n        'page-break-after' =&gt; TRUE, // Possible values - TRUE, FALSE, or not set\n       ),\n      'another-page-break-style' =&gt; array (\n        'page-break-before' =&gt; TRUE, // Possible values - TRUE, FALSE, or not set\n       ),\n     );</code></pre>\n\nThe value of this would be inspected before and after each element in htmltodocx_insert_html_recursive() with a page break being added onto the element as appropriate. Perhaps something like this:<br />\n<pre><code>function htmltodocx_insert_html_recursive(&amp;$phpword_element, $html_dom_array, &amp;$state = array()) {\n   \n  // Go through the html_dom_array, adding bits to go in the PHPWord element\n  $allowed_children = htmltodocx_html_allowed_children($state['parents'][0]);\n\n  if (!empty($state['current_style']['page-break-before'])) {\n    $state['textrun'] = $phpword_element-&gt;addPageBreak();\n  }\n\n...\n\n      // Reset the style back to what it was:\n      $state['current_style'] = $old_style;\n    }\n\n  if (!empty($state['current_style']['page-break-after'])) {\n    $state['textrun'] = $phpword_element-&gt;addPageBreak();\n  }\n}</code></pre>\n\nWe would need to check if this would function properly for all elements (e.g. table rows/cells) - excluding some of these if necessary.<br />\n",
+    "PostedDate": "2014-01-06T22:56:34.697-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]
