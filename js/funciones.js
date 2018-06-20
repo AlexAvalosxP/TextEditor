@@ -153,6 +153,7 @@ function saveDocument()
     xhttp.onreadystatechange = function() {
     	if (this.readyState == 4 && this.status == 200) {
     		console.log('done');
+    		saveAnimation();
     		save(getParameterByName('id'));
     	}
 	}
@@ -289,5 +290,21 @@ function convertHtmlToRtf(html) {
 
 function downloadFile()
 {
-	location.assign('htmltodocx/sourceCode/htmltodocx/example.php?i=' + getParameterByName('id') + '&n=' + document.getElementById('docName').value);
+	saveDocument();
+	var docName2 = document.getElementById('docName').value;
+	if(docName2 == "")
+	{
+		docName2 = "untitled";
+	}
+	location.assign('htmltodocx/sourceCode/htmltodocx/example.php?i=' + getParameterByName('id') + '&n=' + docName2);
+}
+
+function saveAnimation()
+{
+	document.getElementById("saveFeedB").innerHTML = "<div class='feedbackSave'>Guardado</div>";
+	setTimeout(doHide, 1000);
+}
+
+function doHide(){
+    document.getElementById("saveFeedB").innerHTML = "";
 }
